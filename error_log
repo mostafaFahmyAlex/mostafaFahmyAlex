@@ -1,0 +1,465 @@
+[08-Jan-2022 10:37:12 UTC] PHP Warning:  require(/home3/alaanonline/agelalexandria.com/wp-content/plugins/jetpack/vendor/automattic/jetpack-config/src/class-config.php): failed to open stream: No such file or directory in /home3/alaanonline/agelalexandria.com/wp-content/plugins/jetpack/vendor/jetpack-autoloader/class-php-autoloader.php on line 90
+[08-Jan-2022 10:37:12 UTC] PHP Fatal error:  require(): Failed opening required '/home3/alaanonline/agelalexandria.com/wp-content/plugins/jetpack/vendor/automattic/jetpack-config/src/class-config.php' (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home3/alaanonline/agelalexandria.com/wp-content/plugins/jetpack/vendor/jetpack-autoloader/class-php-autoloader.php on line 90
+[03-Feb-2022 21:04:10 UTC] PHP Warning:  opendir(/home3/alaanonline/agelalexandria.com/css): failed to open dir: Permission denied in /home3/alaanonline/agelalexandria.com/wp-content/plugins/security-malware-firewall/lib/CleantalkSP/SpbctWP/Scanner/Surface.php on line 312
+[03-Feb-2022 21:04:10 UTC] PHP Warning:  readdir() expects parameter 1 to be resource, bool given in /home3/alaanonline/agelalexandria.com/wp-content/plugins/security-malware-firewall/lib/CleantalkSP/SpbctWP/Scanner/Surface.php on line 313
+[03-Feb-2022 21:04:10 UTC] PHP Warning:  closedir() expects parameter 1 to be resource, bool given in /home3/alaanonline/agelalexandria.com/wp-content/plugins/security-malware-firewall/lib/CleantalkSP/SpbctWP/Scanner/Surface.php on line 315
+[03-Feb-2022 21:11:51 UTC] PHP Fatal error:  Uncaught UnexpectedValueException: FilesystemIterator::__construct(/home3/alaanonline/agelalexandria.com/css): failed to open dir: Permission denied in /home3/alaanonline/agelalexandria.com/wp-content/plugins/security-malware-firewall/lib/CleantalkSP/SpbctWP/Scanner/Surface.php:133
+Stack trace:
+#0 /home3/alaanonline/agelalexandria.com/wp-content/plugins/security-malware-firewall/lib/CleantalkSP/SpbctWP/Scanner/Surface.php(133): FilesystemIterator->__construct('/home3/alaanonl...', 288)
+#1 /home3/alaanonline/agelalexandria.com/wp-content/plugins/security-malware-firewall/lib/CleantalkSP/SpbctWP/Scanner/Surface.php(146): CleantalkSP\SpbctWP\Scanner\Surface->count_files_in_dir('/home3/alaanonl...')
+#2 /home3/alaanonline/agelalexandria.com/wp-content/plugins/security-malware-firewall/lib/CleantalkSP/SpbctWP/Scanner/Surface.php(68): CleantalkSP\SpbctWP\Scanner\Surface->count_files_in_dir('/home3/alaanonl...')
+#3 /home3/alaanonline/agelalexandria.com/wp-content/plugins/security-malware-firewall/inc/spbc-scanner.php in /home3/alaanonline/agelalexandria.com/wp-content/plugins/security-malware-firewall/lib/CleantalkSP/SpbctWP/Scanner/Surface.php on line 133
+[09-Feb-2022 17:05:42 UTC] WordPress database error Table 'alaanonl_wrdp6.wp_spbc_firewall_data' doesn't exist for query (
+				SELECT 0 AS is_personal, 1 AS is_ip, status, country_code, network1, network2, network3, network4, mask1, mask2, mask3, mask4
+				FROM wp_spbc_firewall_data
+				WHERE
+					    network1 IN (0)
+					AND network2 IN (0)
+					AND network3 IN (0)
+					AND network4 IN (3288334336,3305111552,3313500160,3313762304,3313893376,3313958912,3313975296,3313975808,3313976064,3313976192,3313976256,3313976288,3313976304,3313976308,3313976310,3313976311)
+					AND network1 = 0 & mask1
+					AND network2 = 0 & mask2
+					AND network3 = 0 & mask3
+					AND network4 = 3313976311 & mask4
+					AND country_code = "0"
+			) UNION (
+				SELECT 1 AS is_personal, 1 AS is_ip, status, 0 AS country_code, network1, network2, network3, network4, mask1, mask2, mask3, mask4
+				FROM wp_spbc_firewall__personal_ips
+				WHERE
+					    network1 IN (0)
+					AND network2 IN (0)
+					AND network3 IN (0)
+					AND network4 IN (3288334336,3305111552,3313500160,3313762304,3313893376,3313958912,3313975296,3313975808,3313976064,3313976192,3313976256,3313976288,3313976304,3313976308,3313976310,3313976311)
+					AND network1 = 0 & mask1
+					AND network2 = 0 & mask2
+					AND network3 = 0 & mask3
+					AND network4 = 3313976311 & mask4
+			) UNION (
+				SELECT 1 AS is_personal, 0 AS is_ip, tbl_private.status, country_code, network1, network2, network3, network4, mask1, mask2, mask3, mask4
+				FROM wp_spbc_firewall__personal_countries AS tbl_private
+				RIGHT JOIN wp_spbc_firewall_data AS tbl_common USING(country_code)
+				WHERE
+					    network1 IN (0)
+					AND network2 IN (0)
+					AND network3 IN (0)
+					AND network4 IN (3288334336,3305111552,3313500160,3313762304,3313893376,3313958912,3313975296,3313975808,3313976064,3313976192,3313976256,3313976288,3313976304,3313976308,3313976310,3313976311)
+					AND network1 = 0 & mask1
+					AND network2 = 0 & mask2
+					AND network3 = 0 & mask3
+					AND network4 = 3313976311 & mask4
+					AND tbl_private.status IS NOT NULL
+					AND 58937 <> 0
+			) made by require('wp-blog-header.php'), require_once('wp-load.php'), require_once('wp-config.php'), require_once('wp-settings.php'), include_once('/plugins/security-malware-firewall/security-malware-firewall.php'), spbc_firewall__check, CleantalkSP\Security\Firewall->run, CleantalkSP\SpbctWP\Firewall\FW->check, CleantalkSP\SpbctWP\DB->fetch_all
+[09-Feb-2022 17:05:42 UTC] WordPress database error Table 'alaanonl_wrdp6.wp_spbc_firewall_data' doesn't exist for query (
+				SELECT 0 AS is_personal, 1 AS is_ip, status, country_code, network1, network2, network3, network4, mask1, mask2, mask3, mask4
+				FROM wp_spbc_firewall_data
+				WHERE
+					    network1 IN (0)
+					AND network2 IN (0)
+					AND network3 IN (0)
+					AND network4 IN (3288334336,3305111552,3313500160,3313762304,3313893376,3313958912,3313975296,3313975808,3313976064,3313976192,3313976256,3313976288,3313976304,3313976308,3313976310,3313976311)
+					AND network1 = 0 & mask1
+					AND network2 = 0 & mask2
+					AND network3 = 0 & mask3
+					AND network4 = 3313976311 & mask4
+					AND country_code = "0"
+			) UNION (
+				SELECT 1 AS is_personal, 1 AS is_ip, status, 0 AS country_code, network1, network2, network3, network4, mask1, mask2, mask3, mask4
+				FROM wp_spbc_firewall__personal_ips
+				WHERE
+					    network1 IN (0)
+					AND network2 IN (0)
+					AND network3 IN (0)
+					AND network4 IN (3288334336,3305111552,3313500160,3313762304,3313893376,3313958912,3313975296,3313975808,3313976064,3313976192,3313976256,3313976288,3313976304,3313976308,3313976310,3313976311)
+					AND network1 = 0 & mask1
+					AND network2 = 0 & mask2
+					AND network3 = 0 & mask3
+					AND network4 = 3313976311 & mask4
+			) UNION (
+				SELECT 1 AS is_personal, 0 AS is_ip, tbl_private.status, country_code, network1, network2, network3, network4, mask1, mask2, mask3, mask4
+				FROM wp_spbc_firewall__personal_countries AS tbl_private
+				RIGHT JOIN wp_spbc_firewall_data AS tbl_common USING(country_code)
+				WHERE
+					    network1 IN (0)
+					AND network2 IN (0)
+					AND network3 IN (0)
+					AND network4 IN (3288334336,3305111552,3313500160,3313762304,3313893376,3313958912,3313975296,3313975808,3313976064,3313976192,3313976256,3313976288,3313976304,3313976308,3313976310,3313976311)
+					AND network1 = 0 & mask1
+					AND network2 = 0 & mask2
+					AND network3 = 0 & mask3
+					AND network4 = 3313976311 & mask4
+					AND tbl_private.status IS NOT NULL
+					AND 58799 <> 0
+			) made by require('wp-blog-header.php'), require_once('wp-load.php'), require_once('wp-config.php'), require_once('wp-settings.php'), include_once('/plugins/security-malware-firewall/security-malware-firewall.php'), spbc_firewall__check, CleantalkSP\Security\Firewall->run, CleantalkSP\SpbctWP\Firewall\FW->check, CleantalkSP\SpbctWP\DB->fetch_all
+[09-Feb-2022 17:06:46 UTC] WordPress database error Table 'alaanonl_wrdp6.wp_spbc_firewall_data' doesn't exist for query (
+				SELECT 0 AS is_personal, 1 AS is_ip, status, country_code, network1, network2, network3, network4, mask1, mask2, mask3, mask4
+				FROM wp_spbc_firewall_data
+				WHERE
+					    network1 IN (0)
+					AND network2 IN (0)
+					AND network3 IN (0)
+					AND network4 IN (2617245696,2634022912,2636120064,2637168640,2637430784,2637561856,2637627392,2637635584,2637636608,2637637120,2637637376,2637637504,2637637568,2637637600)
+					AND network1 = 0 & mask1
+					AND network2 = 0 & mask2
+					AND network3 = 0 & mask3
+					AND network4 = 2637637600 & mask4
+					AND country_code = "0"
+			) UNION (
+				SELECT 1 AS is_personal, 1 AS is_ip, status, 0 AS country_code, network1, network2, network3, network4, mask1, mask2, mask3, mask4
+				FROM wp_spbc_firewall__personal_ips
+				WHERE
+					    network1 IN (0)
+					AND network2 IN (0)
+					AND network3 IN (0)
+					AND network4 IN (2617245696,2634022912,2636120064,2637168640,2637430784,2637561856,2637627392,2637635584,2637636608,2637637120,2637637376,2637637504,2637637568,2637637600)
+					AND network1 = 0 & mask1
+					AND network2 = 0 & mask2
+					AND network3 = 0 & mask3
+					AND network4 = 2637637600 & mask4
+			) UNION (
+				SELECT 1 AS is_personal, 0 AS is_ip, tbl_private.status, country_code, network1, network2, network3, network4, mask1, mask2, mask3, mask4
+				FROM wp_spbc_firewall__personal_countries AS tbl_private
+				RIGHT JOIN wp_spbc_firewall_data AS tbl_common USING(country_code)
+				WHERE
+					    network1 IN (0)
+					AND network2 IN (0)
+					AND network3 IN (0)
+					AND network4 IN (2617245696,2634022912,2636120064,2637168640,2637430784,2637561856,2637627392,2637635584,2637636608,2637637120,2637637376,2637637504,2637637568,2637637600)
+					AND network1 = 0 & mask1
+					AND network2 = 0 & mask2
+					AND network3 = 0 & mask3
+					AND network4 = 2637637600 & mask4
+					AND tbl_private.status IS NOT NULL
+					AND 35106 <> 0
+			) made by require('wp-blog-header.php'), require_once('wp-load.php'), require_once('wp-config.php'), require_once('wp-settings.php'), include_once('/plugins/security-malware-firewall/security-malware-firewall.php'), spbc_firewall__check, CleantalkSP\Security\Firewall->run, CleantalkSP\SpbctWP\Firewall\FW->check, CleantalkSP\SpbctWP\DB->fetch_all
+[09-Feb-2022 17:07:20 UTC] WordPress database error Table 'alaanonl_wrdp6.wp_spbc_firewall_data' doesn't exist for query (
+				SELECT 0 AS is_personal, 1 AS is_ip, status, country_code, network1, network2, network3, network4, mask1, mask2, mask3, mask4
+				FROM wp_spbc_firewall_data
+				WHERE
+					    network1 IN (0)
+					AND network2 IN (0)
+					AND network3 IN (0)
+					AND network4 IN (1241513984,1245708288,1247805440,1248854016,1249378304,1249640448,1249705984,1249738752,1249755136,1249759232,1249760256,1249760384,1249760416,1249760432,1249760433)
+					AND network1 = 0 & mask1
+					AND network2 = 0 & mask2
+					AND network3 = 0 & mask3
+					AND network4 = 1249760433 & mask4
+					AND country_code = "0"
+			) UNION (
+				SELECT 1 AS is_personal, 1 AS is_ip, status, 0 AS country_code, network1, network2, network3, network4, mask1, mask2, mask3, mask4
+				FROM wp_spbc_firewall__personal_ips
+				WHERE
+					    network1 IN (0)
+					AND network2 IN (0)
+					AND network3 IN (0)
+					AND network4 IN (1241513984,1245708288,1247805440,1248854016,1249378304,1249640448,1249705984,1249738752,1249755136,1249759232,1249760256,1249760384,1249760416,1249760432,1249760433)
+					AND network1 = 0 & mask1
+					AND network2 = 0 & mask2
+					AND network3 = 0 & mask3
+					AND network4 = 1249760433 & mask4
+			) UNION (
+				SELECT 1 AS is_personal, 0 AS is_ip, tbl_private.status, country_code, network1, network2, network3, network4, mask1, mask2, mask3, mask4
+				FROM wp_spbc_firewall__personal_countries AS tbl_private
+				RIGHT JOIN wp_spbc_firewall_data AS tbl_common USING(country_code)
+				WHERE
+					    network1 IN (0)
+					AND network2 IN (0)
+					AND network3 IN (0)
+					AND network4 IN (1241513984,1245708288,1247805440,1248854016,1249378304,1249640448,1249705984,1249738752,1249755136,1249759232,1249760256,1249760384,1249760416,1249760432,1249760433)
+					AND network1 = 0 & mask1
+					AND network2 = 0 & mask2
+					AND network3 = 0 & mask3
+					AND network4 = 1249760433 & mask4
+					AND tbl_private.status IS NOT NULL
+					AND 55040 <> 0
+			) made by require('wp-blog-header.php'), require_once('wp-load.php'), require_once('wp-config.php'), require_once('wp-settings.php'), include_once('/plugins/security-malware-firewall/security-malware-firewall.php'), spbc_firewall__check, CleantalkSP\Security\Firewall->run, CleantalkSP\SpbctWP\Firewall\FW->check, CleantalkSP\SpbctWP\DB->fetch_all
+[10-Feb-2022 18:00:11 UTC] PHP Warning:  fopen(/home3/alaanonline/agelalexandria.com/wp-content/uploads/wp-cerber-CEZAPV6OT7QYB4SMG0/.htaccess): failed to open stream: Permission denied in /home3/alaanonline/agelalexandria.com/wp-content/plugins/wp-cerber/cerber-scanner.php on line 4113
+[10-Feb-2022 18:34:45 UTC] WordPress database error Table 'alaanonl_wrdp6.wp_spbc_firewall_data' doesn't exist for query (
+				SELECT 0 AS is_personal, 1 AS is_ip, status, country_code, network1, network2, network3, network4, mask1, mask2, mask3, mask4
+				FROM wp_spbc_firewall_data
+				WHERE
+					    network1 IN (0)
+					AND network2 IN (0)
+					AND network3 IN (0)
+					AND network4 IN (1711276032,1719664640,1721761792,1722810368,1723334656,1723465728,1723531264,1723539456,1723543552,1723543584,1723543600,1723543608,1723543612,1723543614)
+					AND network1 = 0 & mask1
+					AND network2 = 0 & mask2
+					AND network3 = 0 & mask3
+					AND network4 = 1723543614 & mask4
+					AND country_code = "0"
+			) UNION (
+				SELECT 1 AS is_personal, 1 AS is_ip, status, 0 AS country_code, network1, network2, network3, network4, mask1, mask2, mask3, mask4
+				FROM wp_spbc_firewall__personal_ips
+				WHERE
+					    network1 IN (0)
+					AND network2 IN (0)
+					AND network3 IN (0)
+					AND network4 IN (1711276032,1719664640,1721761792,1722810368,1723334656,1723465728,1723531264,1723539456,1723543552,1723543584,1723543600,1723543608,1723543612,1723543614)
+					AND network1 = 0 & mask1
+					AND network2 = 0 & mask2
+					AND network3 = 0 & mask3
+					AND network4 = 1723543614 & mask4
+			) UNION (
+				SELECT 1 AS is_personal, 0 AS is_ip, tbl_private.status, country_code, network1, network2, network3, network4, mask1, mask2, mask3, mask4
+				FROM wp_spbc_firewall__personal_countries AS tbl_private
+				RIGHT JOIN wp_spbc_firewall_data AS tbl_common USING(country_code)
+				WHERE
+					    network1 IN (0)
+					AND network2 IN (0)
+					AND network3 IN (0)
+					AND network4 IN (1711276032,1719664640,1721761792,1722810368,1723334656,1723465728,1723531264,1723539456,1723543552,1723543584,1723543600,1723543608,1723543612,1723543614)
+					AND network1 = 0 & mask1
+					AND network2 = 0 & mask2
+					AND network3 = 0 & mask3
+					AND network4 = 1723543614 & mask4
+					AND tbl_private.status IS NOT NULL
+					AND 74223 <> 0
+			) made by require('wp-blog-header.php'), require_once('wp-load.php'), require_once('wp-config.php'), require_once('wp-settings.php'), include_once('/plugins/security-malware-firewall/security-malware-firewall.php'), spbc_firewall__check, CleantalkSP\Security\Firewall->run, CleantalkSP\SpbctWP\Firewall\FW->check, CleantalkSP\SpbctWP\DB->fetch_all
+[10-Feb-2022 18:35:40 UTC] WordPress database error Table 'alaanonl_wrdp6.wp_spbc_firewall_data' doesn't exist for query (
+				SELECT 0 AS is_personal, 1 AS is_ip, status, country_code, network1, network2, network3, network4, mask1, mask2, mask3, mask4
+				FROM wp_spbc_firewall_data
+				WHERE
+					    network1 IN (0)
+					AND network2 IN (0)
+					AND network3 IN (0)
+					AND network4 IN (1711276032,1719664640,1721761792,1722810368,1723334656,1723465728,1723531264,1723539456,1723543552,1723543584,1723543600,1723543608,1723543612,1723543614)
+					AND network1 = 0 & mask1
+					AND network2 = 0 & mask2
+					AND network3 = 0 & mask3
+					AND network4 = 1723543614 & mask4
+					AND country_code = "0"
+			) UNION (
+				SELECT 1 AS is_personal, 1 AS is_ip, status, 0 AS country_code, network1, network2, network3, network4, mask1, mask2, mask3, mask4
+				FROM wp_spbc_firewall__personal_ips
+				WHERE
+					    network1 IN (0)
+					AND network2 IN (0)
+					AND network3 IN (0)
+					AND network4 IN (1711276032,1719664640,1721761792,1722810368,1723334656,1723465728,1723531264,1723539456,1723543552,1723543584,1723543600,1723543608,1723543612,1723543614)
+					AND network1 = 0 & mask1
+					AND network2 = 0 & mask2
+					AND network3 = 0 & mask3
+					AND network4 = 1723543614 & mask4
+			) UNION (
+				SELECT 1 AS is_personal, 0 AS is_ip, tbl_private.status, country_code, network1, network2, network3, network4, mask1, mask2, mask3, mask4
+				FROM wp_spbc_firewall__personal_countries AS tbl_private
+				RIGHT JOIN wp_spbc_firewall_data AS tbl_common USING(country_code)
+				WHERE
+					    network1 IN (0)
+					AND network2 IN (0)
+					AND network3 IN (0)
+					AND network4 IN (1711276032,1719664640,1721761792,1722810368,1723334656,1723465728,1723531264,1723539456,1723543552,1723543584,1723543600,1723543608,1723543612,1723543614)
+					AND network1 = 0 & mask1
+					AND network2 = 0 & mask2
+					AND network3 = 0 & mask3
+					AND network4 = 1723543614 & mask4
+					AND tbl_private.status IS NOT NULL
+					AND 99362 <> 0
+			) made by require('wp-blog-header.php'), require_once('wp-load.php'), require_once('wp-config.php'), require_once('wp-settings.php'), include_once('/plugins/security-malware-firewall/security-malware-firewall.php'), spbc_firewall__check, CleantalkSP\Security\Firewall->run, CleantalkSP\SpbctWP\Firewall\FW->check, CleantalkSP\SpbctWP\DB->fetch_all
+[10-Feb-2022 18:35:56 UTC] WordPress database error Table 'alaanonl_wrdp6.wp_spbc_firewall_data' doesn't exist for query (
+				SELECT 0 AS is_personal, 1 AS is_ip, status, country_code, network1, network2, network3, network4, mask1, mask2, mask3, mask4
+				FROM wp_spbc_firewall_data
+				WHERE
+					    network1 IN (0)
+					AND network2 IN (0)
+					AND network3 IN (0)
+					AND network4 IN (1711276032,1719664640,1721761792,1722810368,1723334656,1723465728,1723531264,1723539456,1723543552,1723543584,1723543600,1723543608,1723543612,1723543614)
+					AND network1 = 0 & mask1
+					AND network2 = 0 & mask2
+					AND network3 = 0 & mask3
+					AND network4 = 1723543614 & mask4
+					AND country_code = "0"
+			) UNION (
+				SELECT 1 AS is_personal, 1 AS is_ip, status, 0 AS country_code, network1, network2, network3, network4, mask1, mask2, mask3, mask4
+				FROM wp_spbc_firewall__personal_ips
+				WHERE
+					    network1 IN (0)
+					AND network2 IN (0)
+					AND network3 IN (0)
+					AND network4 IN (1711276032,1719664640,1721761792,1722810368,1723334656,1723465728,1723531264,1723539456,1723543552,1723543584,1723543600,1723543608,1723543612,1723543614)
+					AND network1 = 0 & mask1
+					AND network2 = 0 & mask2
+					AND network3 = 0 & mask3
+					AND network4 = 1723543614 & mask4
+			) UNION (
+				SELECT 1 AS is_personal, 0 AS is_ip, tbl_private.status, country_code, network1, network2, network3, network4, mask1, mask2, mask3, mask4
+				FROM wp_spbc_firewall__personal_countries AS tbl_private
+				RIGHT JOIN wp_spbc_firewall_data AS tbl_common USING(country_code)
+				WHERE
+					    network1 IN (0)
+					AND network2 IN (0)
+					AND network3 IN (0)
+					AND network4 IN (1711276032,1719664640,1721761792,1722810368,1723334656,1723465728,1723531264,1723539456,1723543552,1723543584,1723543600,1723543608,1723543612,1723543614)
+					AND network1 = 0 & mask1
+					AND network2 = 0 & mask2
+					AND network3 = 0 & mask3
+					AND network4 = 1723543614 & mask4
+					AND tbl_private.status IS NOT NULL
+					AND 80472 <> 0
+			) made by require('wp-blog-header.php'), require_once('wp-load.php'), require_once('wp-config.php'), require_once('wp-settings.php'), include_once('/plugins/security-malware-firewall/security-malware-firewall.php'), spbc_firewall__check, CleantalkSP\Security\Firewall->run, CleantalkSP\SpbctWP\Firewall\FW->check, CleantalkSP\SpbctWP\DB->fetch_all
+[10-Feb-2022 18:36:23 UTC] WordPress database error Table 'alaanonl_wrdp6.wp_spbc_firewall_data' doesn't exist for query (
+				SELECT 0 AS is_personal, 1 AS is_ip, status, country_code, network1, network2, network3, network4, mask1, mask2, mask3, mask4
+				FROM wp_spbc_firewall_data
+				WHERE
+					    network1 IN (0)
+					AND network2 IN (0)
+					AND network3 IN (0)
+					AND network4 IN (2617245696,2634022912,2636120064,2637168640,2637430784,2637561856,2637627392,2637635584,2637636608,2637637120,2637637376,2637637504,2637637536,2637637552,2637637560,2637637564,2637637566,2637637567)
+					AND network1 = 0 & mask1
+					AND network2 = 0 & mask2
+					AND network3 = 0 & mask3
+					AND network4 = 2637637567 & mask4
+					AND country_code = "0"
+			) UNION (
+				SELECT 1 AS is_personal, 1 AS is_ip, status, 0 AS country_code, network1, network2, network3, network4, mask1, mask2, mask3, mask4
+				FROM wp_spbc_firewall__personal_ips
+				WHERE
+					    network1 IN (0)
+					AND network2 IN (0)
+					AND network3 IN (0)
+					AND network4 IN (2617245696,2634022912,2636120064,2637168640,2637430784,2637561856,2637627392,2637635584,2637636608,2637637120,2637637376,2637637504,2637637536,2637637552,2637637560,2637637564,2637637566,2637637567)
+					AND network1 = 0 & mask1
+					AND network2 = 0 & mask2
+					AND network3 = 0 & mask3
+					AND network4 = 2637637567 & mask4
+			) UNION (
+				SELECT 1 AS is_personal, 0 AS is_ip, tbl_private.status, country_code, network1, network2, network3, network4, mask1, mask2, mask3, mask4
+				FROM wp_spbc_firewall__personal_countries AS tbl_private
+				RIGHT JOIN wp_spbc_firewall_data AS tbl_common USING(country_code)
+				WHERE
+					    network1 IN (0)
+					AND network2 IN (0)
+					AND network3 IN (0)
+					AND network4 IN (2617245696,2634022912,2636120064,2637168640,2637430784,2637561856,2637627392,2637635584,2637636608,2637637120,2637637376,2637637504,2637637536,2637637552,2637637560,2637637564,2637637566,2637637567)
+					AND network1 = 0 & mask1
+					AND network2 = 0 & mask2
+					AND network3 = 0 & mask3
+					AND network4 = 2637637567 & mask4
+					AND tbl_private.status IS NOT NULL
+					AND 31957 <> 0
+			) made by require('wp-blog-header.php'), require_once('wp-load.php'), require_once('wp-config.php'), require_once('wp-settings.php'), include_once('/plugins/security-malware-firewall/security-malware-firewall.php'), spbc_firewall__check, CleantalkSP\Security\Firewall->run, CleantalkSP\SpbctWP\Firewall\FW->check, CleantalkSP\SpbctWP\DB->fetch_all
+[10-Feb-2022 18:36:46 UTC] WordPress database error Table 'alaanonl_wrdp6.wp_spbc_firewall_data' doesn't exist for query (
+				SELECT 0 AS is_personal, 1 AS is_ip, status, country_code, network1, network2, network3, network4, mask1, mask2, mask3, mask4
+				FROM wp_spbc_firewall_data
+				WHERE
+					    network1 IN (0)
+					AND network2 IN (0)
+					AND network3 IN (0)
+					AND network4 IN (1711276032,1719664640,1721761792,1722810368,1723334656,1723465728,1723531264,1723539456,1723543552,1723543584,1723543600,1723543608,1723543612,1723543614)
+					AND network1 = 0 & mask1
+					AND network2 = 0 & mask2
+					AND network3 = 0 & mask3
+					AND network4 = 1723543614 & mask4
+					AND country_code = "0"
+			) UNION (
+				SELECT 1 AS is_personal, 1 AS is_ip, status, 0 AS country_code, network1, network2, network3, network4, mask1, mask2, mask3, mask4
+				FROM wp_spbc_firewall__personal_ips
+				WHERE
+					    network1 IN (0)
+					AND network2 IN (0)
+					AND network3 IN (0)
+					AND network4 IN (1711276032,1719664640,1721761792,1722810368,1723334656,1723465728,1723531264,1723539456,1723543552,1723543584,1723543600,1723543608,1723543612,1723543614)
+					AND network1 = 0 & mask1
+					AND network2 = 0 & mask2
+					AND network3 = 0 & mask3
+					AND network4 = 1723543614 & mask4
+			) UNION (
+				SELECT 1 AS is_personal, 0 AS is_ip, tbl_private.status, country_code, network1, network2, network3, network4, mask1, mask2, mask3, mask4
+				FROM wp_spbc_firewall__personal_countries AS tbl_private
+				RIGHT JOIN wp_spbc_firewall_data AS tbl_common USING(country_code)
+				WHERE
+					    network1 IN (0)
+					AND network2 IN (0)
+					AND network3 IN (0)
+					AND network4 IN (1711276032,1719664640,1721761792,1722810368,1723334656,1723465728,1723531264,1723539456,1723543552,1723543584,1723543600,1723543608,1723543612,1723543614)
+					AND network1 = 0 & mask1
+					AND network2 = 0 & mask2
+					AND network3 = 0 & mask3
+					AND network4 = 1723543614 & mask4
+					AND tbl_private.status IS NOT NULL
+					AND 69711 <> 0
+			) made by require('wp-blog-header.php'), require_once('wp-load.php'), require_once('wp-config.php'), require_once('wp-settings.php'), include_once('/plugins/security-malware-firewall/security-malware-firewall.php'), spbc_firewall__check, CleantalkSP\Security\Firewall->run, CleantalkSP\SpbctWP\Firewall\FW->check, CleantalkSP\SpbctWP\DB->fetch_all
+[10-Feb-2022 18:37:32 UTC] WordPress database error Table 'alaanonl_wrdp6.wp_spbc_firewall_data' doesn't exist for query (
+				SELECT 0 AS is_personal, 1 AS is_ip, status, country_code, network1, network2, network3, network4, mask1, mask2, mask3, mask4
+				FROM wp_spbc_firewall_data
+				WHERE
+					    network1 IN (0)
+					AND network2 IN (0)
+					AND network3 IN (0)
+					AND network4 IN (1711276032,1719664640,1721761792,1722810368,1723334656,1723465728,1723531264,1723539456,1723543552,1723543584,1723543600,1723543608,1723543612,1723543614)
+					AND network1 = 0 & mask1
+					AND network2 = 0 & mask2
+					AND network3 = 0 & mask3
+					AND network4 = 1723543614 & mask4
+					AND country_code = "0"
+			) UNION (
+				SELECT 1 AS is_personal, 1 AS is_ip, status, 0 AS country_code, network1, network2, network3, network4, mask1, mask2, mask3, mask4
+				FROM wp_spbc_firewall__personal_ips
+				WHERE
+					    network1 IN (0)
+					AND network2 IN (0)
+					AND network3 IN (0)
+					AND network4 IN (1711276032,1719664640,1721761792,1722810368,1723334656,1723465728,1723531264,1723539456,1723543552,1723543584,1723543600,1723543608,1723543612,1723543614)
+					AND network1 = 0 & mask1
+					AND network2 = 0 & mask2
+					AND network3 = 0 & mask3
+					AND network4 = 1723543614 & mask4
+			) UNION (
+				SELECT 1 AS is_personal, 0 AS is_ip, tbl_private.status, country_code, network1, network2, network3, network4, mask1, mask2, mask3, mask4
+				FROM wp_spbc_firewall__personal_countries AS tbl_private
+				RIGHT JOIN wp_spbc_firewall_data AS tbl_common USING(country_code)
+				WHERE
+					    network1 IN (0)
+					AND network2 IN (0)
+					AND network3 IN (0)
+					AND network4 IN (1711276032,1719664640,1721761792,1722810368,1723334656,1723465728,1723531264,1723539456,1723543552,1723543584,1723543600,1723543608,1723543612,1723543614)
+					AND network1 = 0 & mask1
+					AND network2 = 0 & mask2
+					AND network3 = 0 & mask3
+					AND network4 = 1723543614 & mask4
+					AND tbl_private.status IS NOT NULL
+					AND 64970 <> 0
+			) made by require('wp-blog-header.php'), require_once('wp-load.php'), require_once('wp-config.php'), require_once('wp-settings.php'), include_once('/plugins/security-malware-firewall/security-malware-firewall.php'), spbc_firewall__check, CleantalkSP\Security\Firewall->run, CleantalkSP\SpbctWP\Firewall\FW->check, CleantalkSP\SpbctWP\DB->fetch_all
+[10-Feb-2022 18:38:20 UTC] WordPress database error Table 'alaanonl_wrdp6.wp_spbc_firewall_data' doesn't exist for query (
+				SELECT 0 AS is_personal, 1 AS is_ip, status, country_code, network1, network2, network3, network4, mask1, mask2, mask3, mask4
+				FROM wp_spbc_firewall_data
+				WHERE
+					    network1 IN (0)
+					AND network2 IN (0)
+					AND network3 IN (0)
+					AND network4 IN (1711276032,1719664640,1721761792,1722810368,1723334656,1723465728,1723531264,1723539456,1723543552,1723543584,1723543600,1723543608,1723543612,1723543614)
+					AND network1 = 0 & mask1
+					AND network2 = 0 & mask2
+					AND network3 = 0 & mask3
+					AND network4 = 1723543614 & mask4
+					AND country_code = "0"
+			) UNION (
+				SELECT 1 AS is_personal, 1 AS is_ip, status, 0 AS country_code, network1, network2, network3, network4, mask1, mask2, mask3, mask4
+				FROM wp_spbc_firewall__personal_ips
+				WHERE
+					    network1 IN (0)
+					AND network2 IN (0)
+					AND network3 IN (0)
+					AND network4 IN (1711276032,1719664640,1721761792,1722810368,1723334656,1723465728,1723531264,1723539456,1723543552,1723543584,1723543600,1723543608,1723543612,1723543614)
+					AND network1 = 0 & mask1
+					AND network2 = 0 & mask2
+					AND network3 = 0 & mask3
+					AND network4 = 1723543614 & mask4
+			) UNION (
+				SELECT 1 AS is_personal, 0 AS is_ip, tbl_private.status, country_code, network1, network2, network3, network4, mask1, mask2, mask3, mask4
+				FROM wp_spbc_firewall__personal_countries AS tbl_private
+				RIGHT JOIN wp_spbc_firewall_data AS tbl_common USING(country_code)
+				WHERE
+					    network1 IN (0)
+					AND network2 IN (0)
+					AND network3 IN (0)
+					AND network4 IN (1711276032,1719664640,1721761792,1722810368,1723334656,1723465728,1723531264,1723539456,1723543552,1723543584,1723543600,1723543608,1723543612,1723543614)
+					AND network1 = 0 & mask1
+					AND network2 = 0 & mask2
+					AND network3 = 0 & mask3
+					AND network4 = 1723543614 & mask4
+					AND tbl_private.status IS NOT NULL
+					AND 76197 <> 0
+			) made by require('wp-blog-header.php'), require_once('wp-load.php'), require_once('wp-config.php'), require_once('wp-settings.php'), include_once('/plugins/security-malware-firewall/security-malware-firewall.php'), spbc_firewall__check, CleantalkSP\Security\Firewall->run, CleantalkSP\SpbctWP\Firewall\FW->check, CleantalkSP\SpbctWP\DB->fetch_all
+[10-Feb-2022 18:39:07 UTC] WordPress database error Unknown table 'alaanonl_wrdp6.wp_spbc_firewall_data' for query DROP TABLE wp_spbc_firewall_data; made by require('wp-blog-header.php'), require_once('wp-load.php'), require_once('wp-config.php'), require_once('wp-settings.php'), include_once('/plugins/security-malware-firewall/security-malware-firewall.php'), CleantalkSP\Common\RemoteCalls->perform, CleantalkSP\SpbctWP\RemoteCalls::action__update_security_firewall__worker, spbc_security_firewall_update__worker, CleantalkSP\Common\Queue->executeStage, spbc_security_firewall_update__end_of_update, CleantalkSP\SpbctWP\Firewall\FW::data_tables__delete, CleantalkSP\SpbctWP\DB->execute
+[10-Feb-2022 18:59:10 UTC] خطأ Duplicate entry '1528-0' for key 'PRIMARY' في قاعدة بيانات ووردبريس  للاستعلام INSERT INTO `wp_yoast_indexable_hierarchy` (`indexable_id`, `ancestor_id`, `depth`, `blog_id`) VALUES ('1528', '0', '0', '1') القادم من require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/jannah/single.php'), get_header, locate_template, load_template, require_once('/themes/jannah/header.php'), wp_head, do_action('wp_head'), WP_Hook->do_action, WP_Hook->apply_filters, wp_robots, apply_filters('wp_robots'), WP_Hook->apply_filters, Yoast\WP\SEO\Integrations\Front_End\WP_Robots_Integration->add_robots, Yoast\WP\SEO\Integrations\Front_End\WP_Robots_Integration->get_robots_value, Yoast\WP\SEO\Memoizers\Meta_Tags_Context_Memoizer->for_current_page, Yoast\WP\SEO\Repositories\Indexable_Repository->for_current_page, Yoast\WP\SEO\Repositories\Indexable_Repository->find_by_id_and_type, Yoast\WP\SEO\Repositories\Indexable_Repository->upgrade_indexable, Yoast\WP\SEO\Builders\Indexable_Builder->build, Yoast\WP\SEO\Builders\Indexable_Hierarchy_Builder->build, Yoast\WP\SEO\Builders\Indexable_Hierarchy_Builder->save_ancestors, Yoast\WP\SEO\Repositories\Indexable_Hierarchy_Repository->add_ancestor, Yoast\WP\Lib\Model->save, Yoast\WP\Lib\ORM->save, Yoast\WP\Lib\ORM::execute
